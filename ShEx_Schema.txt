@@ -1,0 +1,35 @@
+PREFIX :       <http://example.org/>
+PREFIX schema: <http://schema.org/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+:FountainPen IRI {
+   schema:brand         @:Brand ;
+   schema:image xsd:anyURI* ;
+   :model      xsd:string ;
+   schema:color xsd:string? ;
+   :fillingSystem xsd:string? ;
+   :creationDate          xsd:date?  ;
+   :adquisitionDate          xsd:date?  ;
+   :nib      @:Nib ? ;
+   schema:material      xsd:string? ;
+   :feeder      @:Feeder? ;
+   schema:description  xsd:string? ;
+   :owner schema:person? ;
+}
+
+:Nib { 
+   schema:material      xsd:string  ;
+   :flex      ["Flex" "No flex" "Semi flex"]? ;
+   :point xsd:string? ;
+   schema:description xsd:string? ;
+}
+
+:Feeder {
+ schema:material xsd:string ;
+ schema:description xsd:string? ;
+}
+
+:Brand {
+ schema:name xsd:string ;
+ schema:url xsd:anyURI? ;
+}

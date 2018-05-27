@@ -1,0 +1,44 @@
+@prefix schema: <http://schema.org/> .
+@prefix :      <http://example.org/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+
+:noBrand  schema:url  "https://en.wikipedia.org/wiki/Sheaffer"^^xsd:anyURI .
+
+:eboniteFeeder  schema:description  "With 2 lines" ;
+        schema:material     "Ebonite" .
+
+:noFeeder  schema:description  "With 2 lines" .
+
+:noPen  schema:brand     :brand ;
+        schema:property  :steelNib .
+
+:steelNib  :flex         "No flex" ;
+        schema:material  "Steel" .
+
+:penComplete  :adquisitionDate  "2018-03-12"^^xsd:date ;
+        :creationDate       "1970-01-01"^^xsd:date ;
+        :feeder             :eboniteFeeder ;
+        :fillingSystem      "Piston" ;
+        :model              "Imperial Triumph" ;
+        :nib                :gold18kNib ;
+        schema:brand        :brand2 ;
+        schema:color        "Gold" ;
+        schema:description  "A good pen" ;
+        schema:material     "Gold plated" .
+
+:gold18kNib  :flex          "Flex" ;
+        :point              "F" ;
+        schema:description  "Triumph nib" ;
+        schema:material     "18k Gold" .
+
+:brand  schema:name  "Parker" .
+
+:brand2  schema:name  "Sheaffer" ;
+        schema:url   "https://en.wikipedia.org/wiki/Sheaffer"^^xsd:anyURI .
+
+:noValidNib  :flex       "NoValidProperty" ;
+        schema:material  "Steel" .
+
+:penSimple  :model    "Sonnet" ;
+        schema:brand  :brand .
